@@ -5,8 +5,11 @@ USER root
 WORKDIR /home/node/packages/cli
 ENTRYPOINT []
 
-ENV PORT=5000
 
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
+
+ENV PORT=5000
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
+
 CMD ["/entrypoint.sh"]
